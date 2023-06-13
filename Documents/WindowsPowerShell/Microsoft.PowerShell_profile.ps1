@@ -10,4 +10,6 @@ Invoke-Expression (& {
       (zoxide init --hook $hook powershell | Out-String)
 })
 
+# Remember install newer PSReadLine by: Install-Module -Force PSReadLine
 Set-PSReadLineOption -EditMode Emacs
+Set-PSReadLineKeyHandler -Chord "Ctrl+e" -Function ForwardWord

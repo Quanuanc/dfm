@@ -41,43 +41,44 @@ alias dfmui="gitui -d $HOME/.dfm -w $HOME"
 alias ssh="kitty +kitten ssh"
 
 proxy() {
-	subnet='255.255.255.0'
-	router='192.168.2.11'
-	dns=$router
-	if [ "$1" != "eth" ]; then
-		cip=$(ipconfig getifaddr en0)
-		networksetup -setmanual Wi-Fi $cip $subnet $router
-		networksetup -setdnsservers Wi-Fi $dns
-		echo 'Wi-Fi Info: '
-		networksetup -getinfo Wi-Fi
-	else
-		cip=$(ipconfig getifaddr en0)
-		networksetup -setmanual Ethernet $cip $subnet $router
-		networksetup -setdnsservers Ethernet $dns
-		echo 'Ethernet Info: '
-		networksetup -getinfo Ethernet
-	fi
-	sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
+    subnet='255.255.255.0'
+    router='192.168.2.11'
+    dns=$router
+    if [ "$1" != "eth" ]; then
+        cip=$(ipconfig getifaddr en0)
+        networksetup -setmanual Wi-Fi $cip $subnet $router
+        networksetup -setdnsservers Wi-Fi $dns
+        echo 'Wi-Fi Info: '
+        networksetup -getinfo Wi-Fi
+    else
+        cip=$(ipconfig getifaddr en0)
+        networksetup -setmanual Ethernet $cip $subnet $router
+        networksetup -setdnsservers Ethernet $dns
+        echo 'Ethernet Info: '
+        networksetup -getinfo Ethernet
+    fi
+    sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
 }
+
 noproxy() {
-	networksetup -setdhcp Wi-Fi
-	networksetup -setdnsservers Wi-Fi empty
-	#    networksetup -setdhcp Ethernet
-	#    networksetup -setdnsservers Ethernet empty
-	sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
-	echo "Proxy Off"
+    networksetup -setdhcp Wi-Fi
+    networksetup -setdnsservers Wi-Fi empty
+    #    networksetup -setdhcp Ethernet
+    #    networksetup -setdnsservers Ethernet empty
+    sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
+    echo "Proxy Off"
 }
 
 list-jdk() {
-	/usr/libexec/java_home -V
+    /usr/libexec/java_home -V
 }
 
 set-jdk() {
-	if [ $# != 1 ]; then
-		echo "usage example: set-jdk 1.8"
-		return 1
-	fi
-	unset JAVA_HOME
-	export JAVA_HOME=`/usr/libexec/java_home -v $1`
-	export PATH=$JAVA_HOME/bin:$PATH
+    if [ $# != 1 ]; then
+        echo "usage example: set-jdk 1.8"
+        return 1
+    fi
+    unset JAVA_HOME
+    export JAVA_HOME=`/usr/libexec/java_home -v $1`
+    export PATH=$JAVA_HOME/bin:$PATH
 }

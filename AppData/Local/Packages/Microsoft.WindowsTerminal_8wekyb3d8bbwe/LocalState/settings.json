@@ -34,15 +34,6 @@
             "keys": "ctrl+shift+f"
         },
         {
-            "command": 
-            {
-                "action": "splitPane",
-                "split": "auto",
-                "splitMode": "duplicate"
-            },
-            "keys": "alt+shift+d"
-        },
-        {
             "command": "unbound",
             "keys": "ctrl+c"
         },
@@ -82,6 +73,15 @@
             "command": 
             {
                 "action": "splitPane",
+                "split": "auto",
+                "splitMode": "duplicate"
+            },
+            "keys": "alt+shift+d"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane",
                 "split": "down"
             },
             "keys": "ctrl+shift+enter"
@@ -91,7 +91,8 @@
             "keys": "alt+w"
         }
     ],
-    "alwaysShowTabs": false,
+    "alwaysShowTabs": true,
+    "centerOnLaunch": true,
     "copyFormatting": "none",
     "copyOnSelect": true,
     "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
@@ -141,9 +142,9 @@
                 "name": "\u547d\u4ee4\u63d0\u793a\u7b26"
             },
             {
-                "guid": "{a5a97cb8-8961-5535-816d-772efe0c6a3f}",
+                "guid": "{ece9aa19-68f6-5c2f-8d4a-720d0fe69c4a}",
                 "hidden": false,
-                "name": "Arch",
+                "name": "arch",
                 "source": "Windows.Terminal.Wsl"
             }
         ]
@@ -405,7 +406,7 @@
         }
     ],
     "showTabsInTitlebar": true,
-    "snapToGridOnResize": false,
+    "snapToGridOnResize": true,
     "tabWidthMode": "titleLength",
     "theme": "dark",
     "themes": 

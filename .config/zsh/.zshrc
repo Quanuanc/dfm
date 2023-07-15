@@ -38,8 +38,6 @@ alias mv='mv -i'
 alias dfm="git --git-dir $HOME/.dfm --work-tree=$HOME"
 alias dfmui="gitui -d $HOME/.dfm -w $HOME"
 
-alias ssh="kitty +kitten ssh"
-
 proxy() {
     subnet='255.255.255.0'
     router='192.168.2.11'

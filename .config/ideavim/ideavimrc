@@ -23,8 +23,8 @@ set idearefactormode=keep
 set ideastatusicon=gray
 set ideajoin
 set clipboard+=unnamed
-set scrolloff=8
-set sidescrolloff=12
+set scrolloff=3
+set sidescrolloff=8
 set ideamarks
 set nokeep-english-in-normal-and-restore-in-insert
 
@@ -52,10 +52,12 @@ nmap yY ^y$
 """ navigation ----------------------------
 nmap <S-h> <Action>(PreviousTab)
 nmap <S-l> <Action>(NextTab)
-nmap gn <Action>(GotoNextError)
-nmap gN <Action>(GotoPreviousError)
-nmap gm <Action>(VcsShowNextChangeMarker)
-nmap gM <Action>(VcsShowPrevChangeMarker)
+nmap <C-S-[> :tabm-1<CR>
+nmap <C-S-]> :tabm+1<CR>
+nmap ]d <Action>(GotoNextError)
+nmap [d <Action>(GotoPreviousError)
+nmap ]g <Action>(VcsShowNextChangeMarker)
+nmap [g <Action>(VcsShowPrevChangeMarker)
 noremap <C-h> <C-w>h
 noremap <C-l> <C-w>l
 noremap <C-j> <C-w>j
@@ -84,8 +86,8 @@ nmap <leader>lr <Action>(RenameElement)
 nmap <leader>fb <Action>(Find)
 nmap <leader>ff <Action>(SearchEverywhere)
 nmap <leader>fw <Action>(FindInPath)
-nmap [[ <Action>(MethodUp)
-nmap ]] <Action>(MethodDown)
+nmap [f <Action>(MethodUp)
+nmap ]f <Action>(MethodDown)
 nmap <leader><leader> <Action>(RecentFiles)
 nmap s <Action>(AceForwardAction)
 nmap S <Action>(AceBackwardAction)

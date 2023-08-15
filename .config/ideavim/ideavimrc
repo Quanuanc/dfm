@@ -50,8 +50,6 @@ nmap yY ^y$
 
 
 """ navigation ----------------------------
-nmap <S-h> <Action>(PreviousTab)
-nmap <S-l> <Action>(NextTab)
 nmap <C-S-[> :tabm-1<CR>
 nmap <C-S-]> :tabm+1<CR>
 nmap ]d <Action>(GotoNextError)
@@ -74,6 +72,7 @@ nmap zo <Action>(ExpandRegion)
 nmap zC <Action>(CollapseAllRegions)
 nmap zO <Action>(ExpandAllRegions)
 nmap gD <Action>(GotoTypeDeclaration)
+nmap gR <Action>(FindUsages)
 nmap <M-k> <Action>(QuickJavaDoc)
 imap <M-k> <Action>(QuickJavaDoc)
 nmap <M-j> <Action>(ShowErrorDescription)
@@ -89,8 +88,7 @@ nmap <leader>fw <Action>(FindInPath)
 nmap [f <Action>(MethodUp)
 nmap ]f <Action>(MethodDown)
 nmap <leader><leader> <Action>(RecentFiles)
-nmap s <Action>(AceForwardAction)
-nmap S <Action>(AceBackwardAction)
+nmap s <Action>(KJumpAction.Char2)
 nmap <leader>e <Action>(ActivateProjectToolWindow)
 nmap <leader>w :q<CR>
 

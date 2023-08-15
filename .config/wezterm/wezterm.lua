@@ -17,6 +17,18 @@ config.window_padding = {
 }
 config.initial_cols = 155
 config.initial_rows = 44
+config.keys = {
+	{
+		key = "H",
+		mods = "SHIFT|CTRL",
+		action = wezterm.action.DisableDefaultAssignment,
+	},
+	{
+		key = "L",
+		mods = "SHIFT|CTRL",
+		action = wezterm.action.DisableDefaultAssignment,
+	},
+}
 
 if wezterm.target_triple == "x86_64-pc-windows-msvc" then
 	config.default_prog = { "powershell.exe" }

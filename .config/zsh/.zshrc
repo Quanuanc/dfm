@@ -42,7 +42,7 @@ alias dfmui="gitui -d $HOME/.dfm -w $HOME"
 proxy() {
     subnet='255.255.255.0'
     router='192.168.5.7'
-    dns='192.168.2.11'
+    dns=$router
     if [ "$1" != "eth" ]; then
         cip=$(ipconfig getifaddr en0)
         networksetup -setmanual Wi-Fi $cip $subnet $router

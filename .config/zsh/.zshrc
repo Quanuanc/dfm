@@ -12,7 +12,7 @@ znap source zsh-users/zsh-autosuggestions
 # fnm & zoxide
 znap eval fnm 'fnm env --use-on-cd'
 znap eval zoxide 'zoxide init zsh --cmd z'
-znap eval zoxide 'atuin init zsh'
+znap eval zoxide 'atuin init zsh --disable-up-arrow'
 
 # ignore duplicate history
 setopt HIST_IGNORE_DUPS
@@ -41,7 +41,7 @@ alias dfmui="gitui -d $HOME/.dfm -w $HOME"
 
 proxy() {
     subnet='255.255.255.0'
-    router='192.168.5.7'
+    router='192.168.1.11'
     dns=$router
     if [ "$1" != "eth" ]; then
         cip=$(ipconfig getifaddr en0)

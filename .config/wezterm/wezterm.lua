@@ -14,7 +14,7 @@ config.window_padding = { left = 0, right = 0, top = 0, bottom = 0 }
 config.initial_cols = 155
 config.initial_rows = 44
 config.font_size = 13
-config.leader = { key = "b", mods = "CTRL" }
+config.leader = { key = ";", mods = "CTRL" }
 config.keys = keys
 
 if wezterm.target_triple == "x86_64-pc-windows-msvc" then

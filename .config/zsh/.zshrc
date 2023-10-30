@@ -27,7 +27,7 @@ alias ldot='ls -ld .*'
 alias lS='ls -1FSsh'
 alias lart='ls -1Fcart'
 alias lrt='ls -1Fcrt'
-alias zshrc='vim ${ZDOTDIR:-$HOME}/.zshrc' # Quick access to the .zshrc file
+alias zshrc='nvim ${ZDOTDIR:-$HOME}/.zshrc' # Quick access to the .zshrc file
 alias t='tail -f'
 alias dud='du -d 1 -h'
 alias duf='du -sh *'
@@ -42,7 +42,7 @@ alias dfmui="gitui -d $HOME/.dfm -w $HOME"
 proxy() {
     subnet='255.255.255.0'
     router='192.168.1.11'
-    dns=$router
+    dns='119.29.29.29'
     if [ "$1" != "eth" ]; then
         cip=$(ipconfig getifaddr en0)
         networksetup -setmanual Wi-Fi $cip $subnet $router

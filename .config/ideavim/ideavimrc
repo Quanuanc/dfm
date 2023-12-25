@@ -78,6 +78,7 @@ imap <M-k> <Action>(QuickJavaDoc)
 nmap <M-j> <Action>(ShowErrorDescription)
 imap <M-j> <Action>(ShowErrorDescription)
 nmap gi <Action>(GotoImplementation)
+nmap gI <Action>(GotoSuperMethod)
 nmap gt <Action>(GotoTest)
 nmap <leader>h <Action>(HighlightUsagesInFile)
 nmap <leader>s <Action>(SelectInProjectView)
@@ -110,6 +111,7 @@ nmap <leader>gp <Action>(Vcs.Push)
 nmap <leader>gb <Action>(Git.Branches)
 nmap <leader>ga <Action>(Annotate)
 nmap <leader>gd <Action>(Compare.SameVersion)
+nmap <leader>gr <Action>(Vcs.RollbackChangedLines)
 
 
 """ leetcode -----------------------------------

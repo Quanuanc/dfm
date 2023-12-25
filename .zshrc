@@ -39,35 +39,6 @@ alias mv='mv -i'
 alias dfm="git --git-dir $HOME/.dfm --work-tree=$HOME"
 alias dfmui="gitui -d $HOME/.dfm -w $HOME"
 
-proxy() {
-    subnet='255.255.255.0'
-    router='192.168.1.11'
-    dns='119.29.29.29'
-    if [ "$1" != "eth" ]; then
-        cip=$(ipconfig getifaddr en0)
-        networksetup -setmanual Wi-Fi $cip $subnet $router
-        networksetup -setdnsservers Wi-Fi $dns
-        echo 'Wi-Fi Info: '
-        networksetup -getinfo Wi-Fi
-    else
-        cip=$(ipconfig getifaddr en0)
-        networksetup -setmanual Ethernet $cip $subnet $router
-        networksetup -setdnsservers Ethernet $dns
-        echo 'Ethernet Info: '
-        networksetup -getinfo Ethernet
-    fi
-    sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
-}
-
-noproxy() {
-    networksetup -setdhcp Wi-Fi
-    networksetup -setdnsservers Wi-Fi empty
-    #    networksetup -setdhcp Ethernet
-    #    networksetup -setdnsservers Ethernet empty
-    sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
-    echo "Proxy Off"
-}
-
 list-jdk() {
     /usr/libexec/java_home -V
 }
